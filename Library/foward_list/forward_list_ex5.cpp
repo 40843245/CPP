@@ -1,0 +1,53 @@
+#include <iostream>
+#include <forward_list>
+using namespace std;
+
+void PrintForwardList(forward_list<int> fl)
+{
+    for (int& x: fl)  
+    {
+        cout << " " << x; 
+    }
+    cout <<endl;
+}
+
+int main ()
+{
+  std::forward_list<int> first = { 1, 2, 3 };
+  std::forward_list<int> second = { 10, 20, 30 };
+
+  auto it = first.begin();  // points to the 1
+
+  cout << "first contains:";
+  PrintForwardList(first);
+  cout << "second contains:";
+  PrintForwardList(second);
+  cout<<"----------"<<endl;
+  
+  first.splice_after ( first.before_begin(), second );
+                          // first: 10 20 30 1 2 3
+                          // second: (empty)
+                          // "it" still points to the 1 (now first's 4th element)
+
+  second.splice_after ( second.before_begin(), first, first.begin(), it);
+                          // first: 10 1 2 3
+                          // second: 20 30
+  cout << "first contains:";
+  PrintForwardList(first);
+  cout << "second contains:";
+  PrintForwardList(second);
+  cout<<"----------"<<endl;
+  first.splice_after ( first.before_begin(), second, second.begin() );
+                          // first: 30 10 1 2 3
+                          // second: 20
+                          // * notice that what is moved is AFTER the iterator
+  
+  cout << "first contains:";
+  PrintForwardList(first);
+  cout << "second contains:";
+  PrintForwardList(second);
+  cout<<"----------"<<endl;
+  
+
+  return 0;
+}
