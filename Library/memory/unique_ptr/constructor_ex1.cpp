@@ -12,7 +12,8 @@ int main ()
   std::unique_ptr<int> u5 (new int, std::default_delete<int>());
   std::unique_ptr<int> u6 (std::move(u5));
   std::unique_ptr<int> u7 (std::move(u6));
-  std::unique_ptr<int> u8 (std::auto_ptr<int>(new int));
+  //std::unique_ptr<int> u8 (std::auto_ptr<int>(new int));  //deprecated in C++11 or above
+  std::unique_ptr<int> u9=std::move(u7);
 
   cout << "u1: " << (u1?"not null":"null") << endl;
   cout << "u2: " << (u2?"not null":"null") << endl;
@@ -21,7 +22,8 @@ int main ()
   cout << "u5: " << (u5?"not null":"null") << endl;
   cout << "u6: " << (u6?"not null":"null") << endl;
   cout << "u7: " << (u7?"not null":"null") << endl;
-  cout << "u8: " << (u8?"not null":"null") << endl;
+  //cout << "u8: " << (u8?"not null":"null") << endl;
+  cout << "u9: " << (u9?"not null":"null") << endl;
   return 0;
 }
 /*
@@ -35,6 +37,7 @@ u6: null
 u7: not null
 u8: not null
 */
+
 /*
 Why?
 (1)u4:not null
@@ -51,3 +54,4 @@ Since it is moved from u5 which its stored pointer is null.
 NOTE that the stored pointer of u6 is NOT null though u6 is null.
 (4)u7:not null
 Since it is moved from u6 which its stored pointer is NOT null.
+*/
