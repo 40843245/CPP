@@ -24,3 +24,30 @@ int main ()
   cout << "u8: " << (u8?"not null":"null") << endl;
   return 0;
 }
+/*
+possible output:
+u1: null
+u2: null
+u3: not null
+u4: not null
+u5: null
+u6: null
+u7: not null
+u8: not null
+*/
+/*
+Why?
+(1)u4:not null
+Since d was defined, d is lvalue
+Take the following statement for example.
+int x=new string("123");
+The value of new string("123") is rvalue;
+x is lvalue.
+See the constructor.
+(2)u5:null
+See above.
+(3)u6:null
+Since it is moved from u5 which its stored pointer is null.
+NOTE that the stored pointer of u6 is NOT null though u6 is null.
+(4)u7:not null
+Since it is moved from u6 which its stored pointer is NOT null.
