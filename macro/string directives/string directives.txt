@@ -1,0 +1,25 @@
+String directives in C.
+NOTE that
+(1)some compiler does NOT support directives for string.
+(2)I don't recommend to use it since it make the code less readable.
+
+(1)For a string, use #
+(2)To concatenate two string use ##
+
+For example,
+if we define a macro,
+#define str(x) #x
+
+this statement
+cout << str(test);
+would be translated into:
+cout << "test";
+
+For example,
+if we define a macro,
+#define glue(a,b) a ## b
+
+this statement
+glue(c,out) << "test";
+would also be translated into:
+cout << "test";
