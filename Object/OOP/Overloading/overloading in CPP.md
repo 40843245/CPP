@@ -82,6 +82,32 @@ independently.
 
 It may cause undefined behaviour.
 
+Recall the fact in C/C++, 
+
+For effectiveness (Or to make it faster), in C/C++
+
+Unncessary operations does NOT performed at runtime (especially for logical operators and of coursely logical assignment operators).
+
+Given two statement P and Q. At runtime,
+
+if P is false, then for P && Q , Q is NOT evaluated since whatever Q is, P && Q is always false.
+
+Similary,
+
+if P is true, then for P || Q ,  Q is NOT evaluated since whatever Q is, P && Q is always true.
+
+However, after overloading the logical operators.
+
+All statements are evaluated.
+
+i.e.The rule are broken.
+
+  Unncessary operations does NOT performed at runtime.
+
+3. There are slightly difference in C/C++ for overloadable operators.
+  
+  In C++, the number of overloadable operator more than C.
+
 ### Syntax 
 #### For declaration,
 <types> operator <overloadable_op> (parameters) { /* contents */}
