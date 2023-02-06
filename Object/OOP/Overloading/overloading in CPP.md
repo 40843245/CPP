@@ -85,9 +85,12 @@ and
 
 independently.
 
-2.Behaviour of logical operator (including || and && (Of course, ||= and &&= )) must be ALWAYS changed after overloading.
+2. Thank to Jerry Coffin again.
+
+Behaviour of logical operator (including || and && (Of course, ||= and &&= )) must be ALWAYS changed after overloading.
 
 It may cause undefined behaviour.
+
 
 Recall the fact in C/C++, 
 
@@ -111,7 +114,9 @@ i.e.The rule are broken.
 
   Unncessary operations does NOT performed at runtime.
 
-3. There are slightly difference in C/C++ for overloadable operators.
+3. Thank to BCS again.
+
+There are slightly difference in C/C++ for overloadable operators.
 
 In C++, the number of overloadable operator more than C.
 
