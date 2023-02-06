@@ -1,10 +1,17 @@
 # Overloading in C++
-In this article, we will discuss about overloading in C.
+In this article, we will discuss about overloading in C++.
+
+NOT in C!!!
+
+NOT in C!!!
+
+NOT in C!!!
+
 
 ## Appreciation
 Before we discuss this topic, 
 
-I really appreciate the solution by Jerry Coffin in StackOverflow.
+I really appreciate the solutions by Jerry Coffin and BCS in StackOverflow.
 
 I have NEVER heard something he or she talked about.
 
@@ -105,8 +112,18 @@ i.e.The rule are broken.
   Unncessary operations does NOT performed at runtime.
 
 3. There are slightly difference in C/C++ for overloadable operators.
+
+In C++, the number of overloadable operator more than C.
+
+From this paragraph (from BCS),
+
+  Most can be overloaded. 
   
-  In C++, the number of overloadable operator more than C.
+  The only C operators that can't be are . and ?: 
+  
+  (and sizeof, which is technically an operator). 
+  
+  C++ adds a few of its own operators, most of which can be overloaded except :: and .*.
 
 ### Syntax 
 #### For declaration,
