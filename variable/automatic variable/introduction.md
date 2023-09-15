@@ -17,3 +17,7 @@ For example:
 A very clear and detailed explanation.
 
 https://stackoverflow.com/questions/13415321/difference-between-static-auto-global-and-local-variable-in-the-context-of-c-a
+
+From Wiki:
+
+https://en.wikipedia.org/wiki/Automatic_variable
